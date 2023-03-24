@@ -42,9 +42,9 @@ public class ArticleController extends Controller {
 	}
 
 	private void doWrite() {
-		System.out.println("제목: ");
+		System.out.print("제목: ");
 		String title = sc.nextLine();
-		System.out.println("내용: ");
+		System.out.print("내용: ");
 		String body = sc.nextLine();
 		
 		articles.add(new Article(++lastId, now, now, loginedMember.id, title, body, 0));
@@ -99,6 +99,7 @@ public class ArticleController extends Controller {
 			}
 		}
 		
+		++article.hit;
 		System.out.printf("번호: %d\n", article.id);
 		System.out.printf("작성날짜: %s\n", article.regDate);
 		System.out.printf("수정날짜: %s\n", article.updateDate);
